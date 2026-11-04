@@ -4,7 +4,7 @@ index.html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Clicker Heboh & Ramai!</title>
+    <title>Cyber Burst - Neon Clicker</title>
     <style>
         * {
             box-sizing: border-box;
@@ -16,13 +16,13 @@ index.html
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a12;
+            font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        /* Background Canvas yang Selalu Ramai */
+        /* Background Grid Futuristik yang Bergerak Ramai */
         #bgCanvas {
             position: absolute;
             top: 0;
@@ -32,81 +32,84 @@ index.html
             z-index: 1;
             pointer-events: none;
         }
-        /* Kontainer Utama Game */
+        /* Desain Kontainer Minimalis & Premium */
         .game-card {
             position: relative;
             z-index: 10;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            padding: 40px;
-            border-radius: 25px;
+            background: rgba(10, 10, 18, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 255, 204, 0.2);
+            padding: 40px 30px;
+            border-radius: 20px;
             text-align: center;
             color: white;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            box-shadow: 0 0 40px rgba(0, 255, 204, 0.1);
+            width: 360px;
             max-width: 90%;
-            width: 380px;
-            animation: floatCard 4s ease-in-out infinite;
-        }
-        @keyframes floatCard {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
         }
         h1 {
-            font-size: 2rem;
-            margin-bottom: 5px;
-            text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
-            color: #fff;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin: 0 0 5px 0;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        .rank-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ff007f;
+            border: 1px solid #ff007f;
+            padding: 4px 12px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(255, 0, 127, 0.2);
         }
         .score-box {
-            font-size: 3rem;
-            font-weight: bold;
-            margin: 15px 0;
+            font-size: 4rem;
+            font-weight: 800;
+            margin: 10px 0 30px 0;
             color: #00ffcc;
-            text-shadow: 0 0 15px rgba(0, 255, 204, 0.6);
+            text-shadow: 0 0 20px rgba(0, 255, 204, 0.4);
+            font-variant-numeric: tabular-nums;
         }
-        .combo-badge {
-            display: inline-block;
-            background: #ff007f;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 0 10px #ff007f;
-            margin-bottom: 25px;
-            animation: pulse 1s infinite alternate;
-        }
-        @keyframes pulse {
-            from { transform: scale(1); }
-            to { transform: scale(1.1); }
-        }
-        /* Tombol Utama */
+        /* Tombol Utama Minimalis Bulat Sempurna */
         .click-btn {
-            width: 150px;
-            height: 150px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            border: none;
-            background: linear-gradient(45deg, #ff007f, #ff7b00);
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
+            border: 2px solid #00ffcc;
+            background: transparent;
+            color: #00ffcc;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
             cursor: pointer;
-            box-shadow: 0 10px 30px rgba(255, 0, 127, 0.5), inset 0 0 15px rgba(255,255,255,0.5);
-            transition: transform 0.1s ease, box-shadow 0.2s ease;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
+            transition: all 0.1s ease;
             outline: none;
+            position: relative;
+            overflow: hidden;
+        }
+        .click-btn:hover {
+            background: rgba(0, 255, 204, 0.05);
+            box-shadow: 0 0 30px rgba(0, 255, 204, 0.4);
         }
         .click-btn:active {
-            transform: scale(0.9);
-            box-shadow: 0 5px 15px rgba(255, 0, 127, 0.7);
+            transform: scale(0.95);
+            border-color: #ff007f;
+            color: #ff007f;
+            box-shadow: 0 0 30px rgba(255, 0, 127, 0.6);
         }
         .instruction {
-            margin-top: 20px;
-            font-size: 0.85rem;
-            opacity: 0.7;
-            color: #e0e0e0;
+            margin-top: 25px;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            color: #888899;
         }
     </style>
 </head>
@@ -115,11 +118,11 @@ index.html
     <canvas id="bgCanvas"></canvas>
 
     <div class="game-card">
-        <h1>EMOJI BURST!</h1>
-        <div class="combo-badge" id="rankBadge">Pemula 😎</div>
+        <h1>CYBER BURST</h1>
+        <div class="rank-badge" id="rankBadge">LEVEL 01</div>
         <div class="score-box" id="scoreDisplay">0</div>
-        <button class="click-btn" id="mainClickBtn">KLIK!</button>
-        <p class="instruction">Klik tombol atau area mana saja untuk membuat keramaian!</p>
+        <button class="click-btn" id="mainClickBtn">CORE</button>
+        <p class="instruction">TAP ANYWHERE TO GENERATE ENERGY</p>
     </div>
 
     <script>
@@ -130,11 +133,9 @@ index.html
         const mainClickBtn = document.getElementById('mainClickBtn');
 
         let score = 0;
-        const emojis = ['🔥', '✨', '⚡', '🎉', '🌟', '🚀', '💥', '👾', '🌈', '👑'];
         let particles = [];
-        let ambientParticles = [];
+        let gridOffset = 0;
 
-        // Menyesuaikan ukuran canvas
         function resizeCanvas() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
@@ -142,142 +143,139 @@ index.html
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
 
-        // Audio Generator Sistem (Tanpa perlu file musik eksternal)
-        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        function playPopSound() {
+        // Audio Synth Generator (Suara laser/klik futuristik)
+        let audioCtx;
+        function playLaserSound() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
             if (audioCtx.state === 'suspended') {
                 audioCtx.resume();
             }
-            const oscillator = audioCtx.createOscillator();
-            const gainNode = audioCtx.createGain();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
             
-            oscillator.type = 'sine';
-            oscillator.frequency.setValueAtTime(150 + Math.random() * 400, audioCtx.currentTime); 
-            oscillator.frequency.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(400 + Math.random() * 300, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(80, audioCtx.currentTime + 0.15);
             
-            gainNode.gain.setValueAtTime(0.3, audioCtx.currentTime);
-            gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+            gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+            gain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.15);
             
-            oscillator.connect(gainNode);
-            gainNode.connect(audioCtx.destination);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
             
-            oscillator.start();
-            oscillator.stop(audioCtx.currentTime + 0.3);
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.15);
         }
 
-        // Kelas untuk Partikel Ledakan Klik
-        class Particle {
+        // Kelas Efek Klik (Spark Neon)
+        class Spark {
             constructor(x, y) {
                 this.x = x;
                 this.y = y;
-                this.emoji = emojis[Math.floor(Math.random() * emojis.length)];
-                this.size = Math.random() * 20 + 20;
-                this.speedX = Math.random() * 10 - 5;
-                this.speedY = Math.random() * 10 - 8;
-                this.gravity = 0.2;
+                this.size = Math.random() * 3 + 2;
+                this.angle = Math.random() * Math.PI * 2;
+                this.speed = Math.random() * 6 + 4;
+                this.color = score % 2 === 0 ? '#00ffcc' : '#ff007f';
                 this.opacity = 1;
-                this.fade = Math.random() * 0.02 + 0.015;
+                this.decay = Math.random() * 0.03 + 0.02;
             }
             update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                this.speedY += this.gravity;
-                this.opacity -= this.fade;
+                this.x += Math.cos(this.angle) * this.speed;
+                this.y += Math.sin(this.angle) * this.speed;
+                this.speed *= 0.96; 
+                this.opacity -= this.decay;
             }
             draw() {
                 ctx.save();
                 ctx.globalAlpha = Math.max(0, this.opacity);
-                ctx.font = `${this.size}px Arial`;
-                ctx.fillText(this.emoji, this.x, this.y);
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = this.color;
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
                 ctx.restore();
             }
         }
 
-        // Kelas untuk Efek Latar Belakang yang Selalu Ramai
-        class AmbientParticle {
-            constructor() {
-                this.reset();
-                this.y = Math.random() * canvas.height; // Mulai acak di layar saat awal beban
-            }
-            reset() {
-                this.x = Math.random() * canvas.width;
-                this.y = canvas.height + 50;
-                this.emoji = emojis[Math.floor(Math.random() * emojis.length)];
-                this.size = Math.random() * 15 + 15;
-                this.speedY = -(Math.random() * 2 + 1);
-                this.speedX = Math.sin(Math.random() * 2) * 1;
-                this.opacity = Math.random() * 0.5 + 0.3;
-            }
-            update() {
-                this.y += this.speedY;
-                this.x += Math.sin(this.y / 30) * 0.5; // Bergerak meliuk-liuk
-                if (this.y < -50) {
-                    this.reset();
-                }
-            }
-            draw() {
-                ctx.save();
-                ctx.globalAlpha = this.opacity;
-                ctx.font = `${this.size}px Arial`;
-                ctx.fillText(this.emoji, this.x, this.y);
-                ctx.restore();
-            }
-        }
-
-        // Inisialisasi background yang ramai (50 partikel mengambang konstan)
-        for (let i = 0; i < 50; i++) {
-            ambientParticles.push(new AmbientParticle());
-        }
-
-        // Logika Aksi Klik Utama
         function doClick(e) {
             score++;
             scoreDisplay.textContent = score;
-            playPopSound();
+            try { playLaserSound(); } catch(err) {}
             updateRank();
 
-            // Koordinat efek ledakan
-            const clientX = e.clientX || (e.touches && e.touches[0].clientX) || window.innerWidth / 2;
-            const clientY = e.clientY || (e.touches && e.touches[0].clientY) || window.innerHeight / 2;
+            const clientX = e.clientX || (e.touches && e.touches.clientX) || window.innerWidth / 2;
+            const clientY = e.clientY || (e.touches && e.touches.clientY) || window.innerHeight / 2;
 
-            // Membuat 8 emoji melompat keluar saat diklik
-            for (let i = 0; i < 8; i++) {
-                particles.push(new Particle(clientX, clientY));
+            // Memunculkan percikan cahaya neon
+            for (let i = 0; i < 12; i++) {
+                particles.push(new Spark(clientX, clientY));
             }
         }
 
-        // Update Pangkat/Rank berdasarkan skor agar seru
         function updateRank() {
-            if (score > 100) {
-                rankBadge.textContent = "DEWA CLICKER Mts 🏆";
-                rankBadge.style.background = "linear-gradient(45deg, #ff00ff, #00ffff)";
-            } else if (score > 50) {
-                rankBadge.textContent = "Master Pro 🔥";
-                rankBadge.style.background = "#00ffcc";
-                rankBadge.style.color = "#000";
-            } else if (score > 20) {
-                rankBadge.textContent = "Penjelajah 🚀";
-                rankBadge.style.background = "#ff7b00";
+            if (score > 150) {
+                rankBadge.textContent = "OVERLORD";
+                rankBadge.style.color = "#ffff00";
+                rankBadge.style.borderColor = "#ffff00";
+            } else if (score > 80) {
+                rankBadge.textContent = "NETRUNNER";
+                rankBadge.style.color = "#00ffcc";
+                rankBadge.style.borderColor = "#00ffcc";
+            } else if (score > 30) {
+                rankBadge.textContent = "CYPHER";
+                rankBadge.style.color = "#ff007f";
+                rankBadge.style.borderColor = "#ff007f";
             }
         }
 
-        // Pasang Event Listener Klik
         mainClickBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Mencegah klik ganda dari window listener
+            e.stopPropagation();
             doClick(e);
         });
         window.addEventListener('click', (e) => {
             doClick(e);
         });
 
-        // Loop Animasi Utama
+        // Loop Animasi Utama (Menggambar Grid & Spark)
         function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            // Latar Belakang Gelap Ringan
+            ctx.fillStyle = '#0a0a12';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            // Jalankan & Gambar Background Ramai
-            ambientParticles.forEach(p => {
-                p.update();
-                p.draw();
-            });
+            // Menggambar Grid Cyberpunk Bergerak Otomatis (Selalu Ramai)
+            ctx.strokeStyle = 'rgba(0, 255, 204, 0.04)';
+            ctx.lineWidth = 1;
+            gridOffset = (gridOffset + 0.5) % 40;
 
-            // Jalankan & Gambar Efek Klik
+            for (let x = gridOffset; x < canvas.width; x += 40) {
+                ctx.beginPath();
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, canvas.height);
+                ctx.stroke();
+            }
+            for (let y = gridOffset; y < canvas.height; y += 40) {
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(canvas.width, y);
+                ctx.stroke();
+            }
+
+            // Jalankan Partikel Neon
+            for (let i = particles.length - 1; i >= 0; i--) {
+                particles[i].update();
+                particles[i].draw();
+                if (particles[i].opacity <= 0) {
+                    particles.splice(i, 1);
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+</body>
+</html>
